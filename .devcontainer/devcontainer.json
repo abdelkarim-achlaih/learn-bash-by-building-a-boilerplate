@@ -4,5 +4,5 @@
 // See https://aka.ms/devcontainer.json for more information.
 {
 	"name": "ona-nuclear-test",
-	"image": "alpine:3.19"
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:20"
 }

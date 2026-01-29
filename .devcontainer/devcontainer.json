@@ -3,8 +3,9 @@
 //
 // See https://aka.ms/devcontainer.json for more information.
 {
-	"name": "Node App",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+	"name": "ona-gitpod-compatible",
+
+	"image": "node:18-bullseye",
 
 	"workspaceFolder": "/workspaces/project",
 

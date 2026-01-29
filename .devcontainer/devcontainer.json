@@ -8,7 +8,9 @@
 
 	"workspaceFolder": "/workspaces/project",
 
-	"postCreateCommand": "touch ~/.bash_history && cp ./freeCodeCamp/.bashrc ~/.bashrc || true",
+	"overrideCommand": false,
+
+	"postCreateCommand": "touch ~/.bash_history && if [ -f ./freeCodeCamp/.bashrc ]; then cp ./freeCodeCamp/.bashrc ~/.bashrc; fi",
 
 	"postStartCommand": "rm -f ./CHANGELOG.md ./coderoad.yaml ./tutorial.json ./TUTORIAL.md || true",
 
@@ -18,5 +20,7 @@
 		}
 	},
 
-	"remoteUser": "node"
+	"remoteUser": "node",
+
+	"shutdownAction": "stopContainer"
 }

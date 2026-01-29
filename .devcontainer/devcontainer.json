@@ -1,0 +1,22 @@
+// The Dev Container format allows you to configure your environment. At the heart of it
+// is a Docker image or Dockerfile which controls the tools available in your environment.
+//
+// See https://aka.ms/devcontainer.json for more information.
+{
+	"name": "Node App",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+
+	"workspaceFolder": "/workspaces/project",
+
+	"postCreateCommand": "touch ~/.bash_history && cp ./freeCodeCamp/.bashrc ~/.bashrc || true",
+
+	"postStartCommand": "rm -f ./CHANGELOG.md ./coderoad.yaml ./tutorial.json ./TUTORIAL.md || true",
+
+	"customizations": {
+		"vscode": {
+			"extensions": ["CodeRoad.coderoad"]
+		}
+	},
+
+	"remoteUser": "node"
+}

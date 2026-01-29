@@ -3,25 +3,21 @@
 //
 // See https://aka.ms/devcontainer.json for more information.
 {
-	"name": "ona-gitpod-compatible",
+	"name": "ona-boot-safe",
 
-	"image": "node:18-bullseye",
+	"image": "node:18",
 
-	"workspaceFolder": "/workspaces/project",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
 	"overrideCommand": false,
 
-	"postCreateCommand": "touch ~/.bash_history && if [ -f ./freeCodeCamp/.bashrc ]; then cp ./freeCodeCamp/.bashrc ~/.bashrc; fi",
+	"remoteUser": "node",
 
-	"postStartCommand": "rm -f ./CHANGELOG.md ./coderoad.yaml ./tutorial.json ./TUTORIAL.md || true",
+	"shutdownAction": "stopContainer",
 
 	"customizations": {
 		"vscode": {
-			"extensions": ["CodeRoad.coderoad"]
+			"extensions": []
 		}
-	},
-
-	"remoteUser": "node",
-
-	"shutdownAction": "stopContainer"
+	}
 }

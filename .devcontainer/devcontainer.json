@@ -3,6 +3,28 @@
 //
 // See https://aka.ms/devcontainer.json for more information.
 {
-	"name": "ona-nuclear-test",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:20"
+  "name": "ona",
+
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+
+  "workspaceFolder": "/workspace/project",
+
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace/project,type=bind"
+  ],
+
+  "postCreateCommand": "bash -c 'sudo touch /workspace/.bash_history && sudo chmod -R 777 /workspace && if [ -f /workspace/project/freeCodeCamp/.bashrc ]; then sudo cp /workspace/project/freeCodeCamp/.bashrc ~/.bashrc; fi && sudo rm -f /workspace/project/CHANGELOG.md && sudo rm -f /workspace/project/coderoad.yaml && sudo rm -f /workspace/project/tutorial.json && sudo rm -f /workspace/project/TUTORIAL.md'",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "CodeRoad.coderoad"
+      ]
+    }
+  },
+
+  "forwardPorts": [],
+
+  "remoteUser": "node"
 }
+
